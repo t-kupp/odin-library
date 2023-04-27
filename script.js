@@ -31,8 +31,8 @@ function displayBooks() {
       newDeleteButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
       newDeleteButton.dataset.arrayPosition = `${i}`;
       newDeleteButton.addEventListener("click", () => {
-        deleteBook(newDeleteButton.dataset.arrayPosition)
-      })
+        deleteBook(newDeleteButton.dataset.arrayPosition);
+      });
       const newTitle = newBookTile.appendChild(document.createElement("h3"));
       newTitle.classList.add("title");
       newTitle.textContent = myLibrary[i].title;
@@ -46,7 +46,7 @@ function displayBooks() {
       newWrapper.classList.add("read-wrapper");
       const newRead = newWrapper.appendChild(document.createElement("p"));
       newRead.classList.add("read");
-      newRead.textContent = "|V|ark as read";
+      newRead.textContent = "Mark as read";
       const newCheckbox = newWrapper.appendChild(document.createElement("input"));
       newCheckbox.classList.add("read-box");
       newCheckbox.setAttribute("type", "checkbox");
@@ -61,9 +61,7 @@ function displayBooks() {
 
 displayBooks();
 // Add Book button
-
 const addBookBtn = document.getElementById("addBookBtn");
-
 const bookNameInput = document.getElementById("book-name-input");
 const authorNameInput = document.getElementById("author-name-input");
 const publishedInput = document.getElementById("published-input");
@@ -84,6 +82,7 @@ addBookBtn.addEventListener("click", (e) => {
     alert("Please enter the published year");
     return;
   }
+  
   //  Forming an object out of the inputs
   new Book(
     bookNameInput.value,
@@ -95,8 +94,8 @@ addBookBtn.addEventListener("click", (e) => {
   displayBooks();
 });
 
-// Function for delete button 
+// Function for delete button
 function deleteBook(arrayPosition) {
-myLibrary.splice(arrayPosition, 1);
-document.getElementById(`book-${arrayPosition}`).remove()
+  myLibrary.splice(arrayPosition, 1);
+  document.getElementById(`book-${arrayPosition}`).remove();
 }

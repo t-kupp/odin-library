@@ -17,58 +17,70 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div id="library-section">
-      <div id="header">
-        <h1>Library</h1>
+    <div id="main-wrapper">
+      <div id="library-section">
+        <div id="header">
+          <h1>Library</h1>
+        </div>
+        <div id="display"></div>
       </div>
-      <div id="display">
-       
+      <div id="add-book-section">
+        <h2>Add new book!</h2>
+        <form action="">
+          <div class="input-wrapper">
+            <label class="input-label" for="book-name">Book Name</label>
+            <input
+              class="add-input-field"
+              type="text"
+              name="book-name"
+              id="book-name-input"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="input-wrapper">
+            <label class="input-label" for="author-name">Author Name</label>
+            <input
+              class="add-input-field"
+              type="text"
+              name="author-name"
+              id="author-name-input"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="input-wrapper">
+            <label class="input-label" for="published">Year published</label>
+            <input
+              class="add-input-field"
+              type="number"
+              name="published"
+              id="published-input"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="read-wrapper">
+            <label class="input-label" for="read">Mark as read</label>
+            <input
+              class="read-box"
+              type="checkbox"
+              name="read"
+              id="read-input"
+              autocomplete="off"
+            />
+          </div>
+          <input type="submit" value="Add Book" id="addBookBtn" />
+        </form>
+        <p id="copyright">
+          2023 created by T-Kupp<a id="copyright-link" target="_blank" href="https://github.com/t-kupp">
+            <i id="github-icon" class="fa-brands fa-github"></i>
+          </a>
+          |<a id="source-link" target="_blank" href="https://github.com/t-kupp/odin-library"
+            >Source</a
+          >
+        </p>
       </div>
-      <div id="footer"></div>
-    </div>
-
-    <div id="add-book-section">
-      <h2>Add new book!</h2>
-      <form action="">
-        <div class="input-wrapper">
-          <label class="input-label" for="book-name">Book Name</label>
-          <input
-            class="add-input-field"
-            type="text"
-            name="book-name"
-            id="book-name-input"
-            required
-            autocomplete="off"
-          />
-        </div>
-        <div class="input-wrapper">
-          <label class="input-label" for="author-name">Author Name</label>
-          <input
-            class="add-input-field"
-            type="text"
-            name="author-name"
-            id="author-name-input"
-            required
-            autocomplete="off"
-          />
-        </div>
-        <div class="input-wrapper">
-          <label class="input-label" for="published">Year published</label>
-          <input
-            class="add-input-field"
-            type="number"
-            name="published"
-            id="published-input"
-            required
-            autocomplete="off"
-          />
-        </div>
-        <div class="read-wrapper">
-          <label class="input-label" for="read">|V|ark as read</label>
-          <input class="read-box" type="checkbox" name="read" id="read-input" autocomplete="off" />
-        </div>
-        <input type="submit" value="Add Book" id="addBookBtn" />
-      </form>
     </div>
   </body>
 </html>

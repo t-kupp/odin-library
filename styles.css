@@ -14,10 +14,13 @@
 
 body {
   color: var(--main-color-0);
-  display: flex;
-  flex-direction: row;
   background-color: var(--main-color-4);
   padding: 20px;
+}
+
+#main-wrapper {
+  display: flex;
+  flex-direction: row;
 }
 
 #library-section {
@@ -79,7 +82,7 @@ body {
 
 #add-book-section {
   margin-top: 68px;
-  height: 490px;
+  height: 450px;
   width: 250px;
   background-color: var(--main-color-3);
   border-radius: 10px;
@@ -97,7 +100,6 @@ body {
 .add-input-field {
   font-weight: 600;
   font-size: 16px;
-  width: 100%;
   border: none;
   background-color: var(--main-color-3);
   border-bottom: 2px solid var(--main-color-1);
@@ -107,13 +109,18 @@ body {
   outline: none;
 }
 
+#read-input {
+  margin-right: 27px;
+}
+
 #addBookBtn {
+margin-left:70px;
   background-color: var(--main-color-3);
   color: var(--main-color-1);
   border: 2px solid var(--main-color-1);
   border-radius: 25px;
   padding: 4px 12px;
-  margin-top: 30px;
+  margin-top: 60px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -129,4 +136,42 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+#copyright {
+  font-size: 12px;
+  margin-top: 60px;
+  color: var(--main-color-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Poppins;
+}
+
+#copyright-link {
+  color: var(--main-color-2);
+  text-decoration: none;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#source-link {
+  color: var(--main-color-2);
+  margin-left: 5px;
+  transition: 100ms ease-in-out;
+}
+
+#source-link:hover {
+color: var(--main-color-1);
+}
+
+#github-icon {
+  font-size: 22px;
+  text-decoration: none;
+  transition: 200ms ease-in-out;
+}
+
+#github-icon:hover {
+  color: var(--main-color-1);
+  transform: scale(1.1);
 }
