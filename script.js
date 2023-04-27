@@ -46,7 +46,7 @@ function displayBooks() {
       newWrapper.classList.add("read-wrapper");
       const newRead = newWrapper.appendChild(document.createElement("p"));
       newRead.classList.add("read");
-      newRead.textContent = "Mark as read";
+      newRead.textContent = "|V|ark as read";
       const newCheckbox = newWrapper.appendChild(document.createElement("input"));
       newCheckbox.classList.add("read-box");
       newCheckbox.setAttribute("type", "checkbox");
