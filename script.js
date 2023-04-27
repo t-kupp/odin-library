@@ -30,7 +30,7 @@ function displayBooks() {
       newTitle.textContent = myLibrary[i].title;
       const newAuthor = newBookTile.appendChild(document.createElement("p"));
       newAuthor.classList.add("author");
-      newAuthor.textContent = myLibrary[i].author;
+      newAuthor.textContent = `by ${myLibrary[i].author}`;
       const newPublished = newBookTile.appendChild(document.createElement("p"));
       newPublished.classList.add("published");
       newPublished.textContent = myLibrary[i].published;
