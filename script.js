@@ -19,7 +19,7 @@ new Book("The Hobbit", "J. R. R. Tolkien", '1937', false, false);
 function displayBooks() {
   for (let i = 0; i < myLibrary.length; i++) {
     if (myLibrary[i].displayed == true) {
-      return;
+      continue;
     } else {
       const bookDisplay = document.getElementById("display");
       const newBookTile = bookDisplay.appendChild(document.createElement("div"));
@@ -46,6 +46,7 @@ function displayBooks() {
       if (myLibrary[i].read == true) {
         newCheckbox.checked = true;
       }
+      myLibrary[i].displayed = true;
     }
   }
 }
