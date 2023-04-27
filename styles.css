@@ -117,10 +117,6 @@ body {
   outline: none;
 }
 
-#read-input {
-  margin-right: 27px;
-}
-
 #addBookBtn {
 margin-left:70px;
   background-color: var(--main-color-3);
@@ -182,4 +178,21 @@ color: var(--main-color-1);
 #github-icon:hover {
   color: var(--main-color-1);
   transform: scale(1.1);
+}
+
+/* Remove number input arrows */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px blue inset;
 }
