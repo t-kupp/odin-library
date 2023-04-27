@@ -82,7 +82,7 @@ addBookBtn.addEventListener("click", (e) => {
     alert("Please enter the published year");
     return;
   }
-  
+
   //  Forming an object out of the inputs
   new Book(
     bookNameInput.value,
