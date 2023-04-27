@@ -13,7 +13,7 @@ function Book(title, author, published, read, displayed) {
 
 // Manually added placeholder books
 new Book("Harry Potter", "J. K. Rowling", 1997, true, false);
-new Book("The Hobbit", "J. R. R. Tolkien", '1937', false, false);
+new Book("The Hobbit", "J. R. R. Tolkien", "1937", false, false);
 
 // Function to display books in the DOM
 function displayBooks() {
@@ -25,6 +25,14 @@ function displayBooks() {
       const newBookTile = bookDisplay.appendChild(document.createElement("div"));
       newBookTile.setAttribute("id", `book-${i}`);
       newBookTile.classList.add("book-tile");
+      const newDeleteButton = newBookTile.appendChild(document.createElement("button"));
+      newDeleteButton.setAttribute("type", "submit");
+      newDeleteButton.classList.add("delete-btn");
+      newDeleteButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+      newDeleteButton.dataset.arrayPosition = `${i}`;
+      newDeleteButton.addEventListener("click", () => {
+        deleteBook(newDeleteButton.dataset.arrayPosition)
+      })
       const newTitle = newBookTile.appendChild(document.createElement("h3"));
       newTitle.classList.add("title");
       newTitle.textContent = myLibrary[i].title;
@@ -86,3 +94,9 @@ addBookBtn.addEventListener("click", (e) => {
   );
   displayBooks();
 });
+
+// Function for delete button 
+function deleteBook(arrayPosition) {
+myLibrary.splice(arrayPosition, 1);
+document.getElementById(`book-${arrayPosition}`).remove()
+}
