@@ -128,7 +128,7 @@ body {
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(2px);
   z-index: 1;
 }
@@ -190,7 +190,7 @@ body {
 }
 
 #addBookBtn:hover {
-  background-color: var(--main-color-1);
+  background-color: var(--main-color-0);
   color: var(--main-color-4);
 }
 #close-form-btn {
@@ -198,16 +198,16 @@ body {
   top: -6px;
   right: -6px;
   color: var(--main-color-0);
+  outline: 1px solid var(--main-color-0);
   cursor: pointer;
   border: none;
   margin-left: 30px;
   background-color: var(--main-color-3);
-  outline: 1px solid var(--main-color-0);
-  border-radius: 50px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 16px;
   width: 16px;
   height: 16px;
-  line-height: 16px;
-  font-size: 16px;
 }
 
 #close-form-btn:hover {
