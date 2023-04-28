@@ -69,7 +69,7 @@ function displayBooks() {
       newDeleteButton.textContent = "Delete";
       newDeleteButton.dataset.arrayPosition = `${i}`;
       newDeleteButton.addEventListener("click", () => {
-        deleteBook(newDeleteButton.dataset.arrayPosition);
+        deleteBook(i);
       });
       const newRead = newWrapper.appendChild(document.createElement("p"));
       newRead.classList.add("read");
@@ -90,8 +90,8 @@ function displayBooks() {
     }
   }
 }
-
 displayBooks();
+
 // Add Book button
 const addBookBtn = document.getElementById("addBookBtn");
 const bookNameInput = document.getElementById("book-name-input");
@@ -130,9 +130,9 @@ addBookBtn.addEventListener("click", (e) => {
 });
 
 // Function for delete button
-function deleteBook(arrayPosition) {
-  myLibrary.splice(arrayPosition, 1);
-  document.getElementById(`book-${arrayPosition}`).remove();
+function deleteBook(i) {
+  myLibrary.splice(i, 1)
+  document.getElementById(`book-${i}`).remove();
 }
 
 // Function to empty the input fields after adding a book
