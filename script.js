@@ -1,3 +1,7 @@
+const openFormBtn = document.getElementById("open-book-form-btn");
+const formWrapper = document.getElementById("darken-wrapper");
+const closeFormBtn = document.getElementById("close-form-btn");
+
 // The Library array to store books
 let myLibrary = [];
 
@@ -77,7 +81,12 @@ function displayBooks() {
       if (myLibrary[i].read == true) {
         newCheckbox.checked = true;
       }
+      newCheckbox.addEventListener("change", () => {
+        toggleReadStatus(i);
+      });
+      toggleReadStatus(i);
       myLibrary[i].displayed = true;
+      formWrapper.style.display = "none";
     }
   }
 }
@@ -133,4 +142,25 @@ function resetInputFields() {
   publishedInput.value = "";
   coverUrlInput.value = "";
   readInput.checked = false;
+}
+
+// Add book form and close form button
+openFormBtn.addEventListener("click", () => {
+  formWrapper.style.display = "block";
+});
+closeFormBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  formWrapper.style.display = "none";
+});
+
+// Toggle read status
+function toggleReadStatus(i) {
+  if (myLibrary[i].read == true) {
+    myLibrary[i].read = false;
+    document.getElementById(`book-${i}`).style.opacity = "0.4";
+  } else {
+    myLibrary[i].read = true;
+    document.getElementById(`book-${i}`).style.opacity = "1";
+  }
+  console.log(myLibrary[i].read);
 }
