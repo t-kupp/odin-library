@@ -52,10 +52,10 @@ body {
 }
 
 .delete-btn {
-  font-size: 12px;;
+  font-size: 12px;
   background-color: var(--main-color-3);
   color: var(--main-color-1);
-  border:none;
+  border: none;
   border-right: 1px solid var(--main-color-1);
   padding-right: 8px;
   font-weight: 500;
@@ -68,10 +68,10 @@ body {
 }
 
 .read {
-  font-size: 12px;;
+  font-size: 12px;
   background-color: var(--main-color-3);
   color: var(--main-color-1);
-  border:none;
+  border: none;
   padding-left: 8px;
   font-weight: 500;
   margin-top: 16px;
@@ -91,13 +91,18 @@ body {
   accent-color: var(--main-color-1);
 }
 
-
 .cover {
   margin: 3px;
   border: 2px solid var(--main-color-0);
   height: 250px;
   width: 170px;
   object-fit: cover;
+}
+
+#coverUrl-input::placeholder {
+  color: gray;
+  font-weight: 500;
+  font-size: 12px;
 }
 
 #add-book-section {
