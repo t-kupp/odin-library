@@ -194,15 +194,25 @@ body {
   color: var(--main-color-4);
 }
 #close-form-btn {
-  color: var(--main-color-1);
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  color: var(--main-color-0);
   cursor: pointer;
   border: none;
   margin-left: 30px;
   background-color: var(--main-color-3);
+  outline: 1px solid var(--main-color-0);
+  border-radius: 50px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 16px;
 }
 
 #close-form-btn:hover {
-  color: var(--main-color-0);
+  color: var(--main-color-3);
+  background-color: var(--main-color-0);
 }
 
 .title,
@@ -223,6 +233,8 @@ body {
   align-items: center;
   justify-content: center;
   font-family: Poppins;
+  background-color: var(--main-color-0);
+  border-radius: 50px;
 }
 
 #copyright-link {
@@ -268,4 +280,24 @@ input[type="number"] {
 /* Change the white to any color ;) */
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px blue inset;
+}
+
+@media screen and (max-width: 620px) {
+  #display {
+    justify-content: center;
+  }
+
+  #header {
+    justify-content: space-around;
+  }
+
+  #darken-wrapper {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: none;
+    z-index: 1;
+  }
 }
