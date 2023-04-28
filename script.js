@@ -51,14 +51,12 @@ function displayBooks() {
       newPublished.textContent = myLibrary[i].published;
       const newCover = newBookTile.appendChild(document.createElement("img"));
       newCover.classList.add("cover");
-
       // Insert placeholder cover if input is left empty
       if (`${myLibrary[i].coverUrl}`.trim() === "") {
         newCover.setAttribute("src", "./images/placeholder.jpg");
       } else {
         newCover.setAttribute("src", `${myLibrary[i].coverUrl}`);
       }
-
       const newWrapper = newBookTile.appendChild(document.createElement("div"));
       newWrapper.classList.add("read-wrapper");
       const newDeleteButton = newWrapper.appendChild(document.createElement("button"));
