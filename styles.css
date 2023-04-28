@@ -93,7 +93,7 @@ body {
 
 .cover {
   margin: 3px;
-  border: 2px solid var(--main-color-0);
+  box-shadow: 1px 1px 5px black;
   height: 250px;
   width: 170px;
   object-fit: cover;
