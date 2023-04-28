@@ -39,25 +39,30 @@ function displayBooks() {
     const newBookTile = bookDisplay.appendChild(document.createElement("div"));
     newBookTile.setAttribute("id", `book-${i}`);
     newBookTile.classList.add("book-tile");
+
     const newTitle = newBookTile.appendChild(document.createElement("h3"));
     newTitle.classList.add("title");
     newTitle.textContent = myLibrary[i].title;
+
     const newAuthor = newBookTile.appendChild(document.createElement("p"));
     newAuthor.classList.add("author");
     newAuthor.textContent = `by ${myLibrary[i].author}`;
+
     const newPublished = newBookTile.appendChild(document.createElement("p"));
     newPublished.classList.add("published");
     newPublished.textContent = myLibrary[i].published;
+
     const newCover = newBookTile.appendChild(document.createElement("img"));
     newCover.classList.add("cover");
-    // Insert placeholder cover if input is left empty
     if (`${myLibrary[i].coverUrl}`.trim() === "") {
       newCover.setAttribute("src", "./images/placeholder.jpg");
     } else {
       newCover.setAttribute("src", `${myLibrary[i].coverUrl}`);
     }
+
     const newWrapper = newBookTile.appendChild(document.createElement("div"));
     newWrapper.classList.add("read-wrapper");
+
     const newDeleteButton = newWrapper.appendChild(document.createElement("button"));
     newDeleteButton.setAttribute("type", "submit");
     newDeleteButton.classList.add("delete-btn");
@@ -66,9 +71,11 @@ function displayBooks() {
     newDeleteButton.addEventListener("click", () => {
       deleteBook(i);
     });
+
     const newRead = newWrapper.appendChild(document.createElement("p"));
     newRead.classList.add("read");
     newRead.textContent = "Read";
+
     const newCheckbox = newWrapper.appendChild(document.createElement("input"));
     newCheckbox.classList.add("read-box");
     newCheckbox.setAttribute("type", "checkbox");
@@ -85,7 +92,7 @@ function displayBooks() {
 }
 displayBooks();
 
-// Add Book button
+// Opening and closing the add book form
 const addBookBtn = document.getElementById("addBookBtn");
 const bookNameInput = document.getElementById("book-name-input");
 const authorNameInput = document.getElementById("author-name-input");
@@ -95,7 +102,6 @@ const coverUrlInput = document.getElementById("coverUrl-input");
 
 addBookBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  //   Preventing empty inputs
   if (bookNameInput.value.trim() === "") {
     alert("Please enter the books name");
     return;
@@ -108,11 +114,17 @@ addBookBtn.addEventListener("click", (e) => {
     alert("Please enter the published year");
     return;
   }
-
-  //  Forming an object out of the inputs
   new Book(bookNameInput.value, authorNameInput.value, publishedInput.value, coverUrlInput.value);
   displayBooks();
   resetInputFields();
+});
+
+openFormBtn.addEventListener("click", () => {
+  formWrapper.style.display = "block";
+});
+closeFormBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  formWrapper.style.display = "none";
 });
 
 // Function for delete button
@@ -129,15 +141,6 @@ function resetInputFields() {
   publishedInput.value = "";
   coverUrlInput.value = "";
 }
-
-// Add book form and close form button
-openFormBtn.addEventListener("click", () => {
-  formWrapper.style.display = "block";
-});
-closeFormBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  formWrapper.style.display = "none";
-});
 
 // Toggle read status
 function toggleReadStatus(i) {
