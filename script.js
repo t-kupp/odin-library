@@ -1,6 +1,5 @@
 const openFormBtn = document.getElementById("open-book-form-btn");
 const formWrapper = document.getElementById("darken-wrapper");
-const closeFormBtn = document.getElementById("close-form-btn");
 const bookDisplay = document.getElementById("display");
 
 // The Library array to store books
@@ -93,6 +92,7 @@ function displayBooks() {
 displayBooks();
 
 // Opening and closing the add book form
+const addBookSection = document.getElementById("add-book-section");
 const addBookBtn = document.getElementById("addBookBtn");
 const bookNameInput = document.getElementById("book-name-input");
 const authorNameInput = document.getElementById("author-name-input");
@@ -122,9 +122,12 @@ addBookBtn.addEventListener("click", (e) => {
 openFormBtn.addEventListener("click", () => {
   formWrapper.style.display = "block";
 });
-closeFormBtn.addEventListener("click", (e) => {
+
+formWrapper.addEventListener("click", (e) => {
   e.preventDefault();
-  formWrapper.style.display = "none";
+  if (e.target == formWrapper) {
+    formWrapper.style.display = "none";
+  }
 });
 
 // Function for delete button
